@@ -1,8 +1,8 @@
 {
-  "name": "curry-bifunctors",
+  "name": "curry-functors",
   "version": "0.0.1",
   "author": "fwcd",
-  "synopsis": "Functors over types with two arguments",
+  "synopsis": "Contravariant functors, bifunctors, profunctors and more",
   "category": [ "Data" ],
   "license": "BSD-3-Clause",
   "licenseFile": "LICENSE",
