@@ -1,5 +1,5 @@
 {
-  "name": "curry-functors",
+  "name": "functors",
   "version": "0.0.1",
   "author": "fwcd",
   "synopsis": "Contravariant functors, bifunctors, profunctors and more",
