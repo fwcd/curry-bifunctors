@@ -1,10 +1,12 @@
 module Data.Functor.Contravariant
-  ( Contravariant (..), ($<), (>$<), (>$$<)
+  ( Contravariant (..), ($<), (>$<), (>$$<), phantom
   , Predicate (..)
   , Comparison (..), defaultComparison
   , Equivalence (..), defaultEquivalence, comparisonEquivalence
   , Op (..)
   ) where
+
+import Data.Functor.Const ( Const (..) )
 
 infixl 4 >$, $<, >$<, >$$<
 
@@ -13,6 +15,14 @@ class Contravariant f where
 
   (>$) :: b -> f b -> f a
   (>$) = contramap . const
+
+instance Contravariant (Const a) where
+  contramap _ (Const x) = Const x
+
+-- | If f is both Functor and Contravariant (and follows its laws),
+-- we cannot really use its argument. We then have fmap f = contramap f = phantom.
+phantom :: (Functor f, Contravariant f) => f a -> f b
+phantom x = () <$ x $< ()
 
 -- | (>$) with its arguments flipped.
 ($<) :: Contravariant f => f b -> b -> f a
