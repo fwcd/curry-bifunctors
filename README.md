@@ -2,6 +2,17 @@
 
 This package adds a range of more or less exotic functors to Curry, including contravariant functors, bifunctors and profunctors.
 
+## Contravariant functors
+
+Contravariant functors, as known from [Haskell](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Functor-Contravariant.html), are functors that 'flip' the direction of the mapped function:
+
+```curry
+class Contravariant f where
+  contramap :: (a -> b) -> f b -> f a
+```
+
+A simple example of a bifunctor is a regular function where the functor maps over the _argument_ rather than the _result_.
+
 ## Bifunctors
 
 Bifunctors, as known from [Haskell](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Bifunctor.html), are functors over types with two arguments:
@@ -11,6 +22,8 @@ class Bifunctor p where
   -- | Maps over both arguments at the same time.
   bimap :: (a -> b) -> (c -> d) -> p a c -> p b d
 ```
+
+Examples of bifunctors are `Either` and `(,)` (2-ary tuples).
 
 ## Credits
 
