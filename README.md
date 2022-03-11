@@ -31,6 +31,7 @@ The modules are adapted from BSD-licensed code from Haskell's base libraries and
 
 | Module | Copyright |
 | ------ | --------- |
+| `Control.Comonad` | (C) 2008-2015 Edward Kmett, (C) 2004 Dave Menendez |
 | `Data.Bifunctor` | (C) 2008-2014 Edward Kmett |
 | `Data.Biapplicative` | (C) 2011-2015 Edward Kmett |
 | `Data.Functor.Compose` | (c) Ross Paterson 2010 |
