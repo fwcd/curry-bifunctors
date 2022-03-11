@@ -27,11 +27,12 @@ Examples of bifunctors are `Either` and `(,)` (2-ary tuples).
 
 ## Credits
 
-The libraries are adapted from BSD-licensed code from Haskell's base libraries under the following copyrights:
+The modules are adapted from BSD-licensed code from Haskell's base libraries and related packages under the following copyrights:
 
 | Module | Copyright |
 | ------ | --------- |
 | `Data.Bifunctor` | (C) 2008-2014 Edward Kmett |
+| `Data.Biapplicative` | (C) 2011-2015 Edward Kmett |
 | `Data.Functor.Compose` | (c) Ross Paterson 2010 |
 | `Data.Functor.Const` | Conor McBride and Ross Paterson 2005 |
 | `Data.Functor.Contravariant` | (C) 2007-2015 Edward Kmett |
