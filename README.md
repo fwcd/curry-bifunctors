@@ -15,7 +15,7 @@ A simple example of a bifunctor is a regular function where the functor maps ove
 
 ## Bifunctors
 
-Bifunctors, as known from [Haskell](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Bifunctor.html), are functors over types with two arguments:
+Bifunctors, as known from [Haskell](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Bifunctor.html), are (covariant) functors over types with two arguments:
 
 ```curry
 class Bifunctor p where
@@ -24,6 +24,18 @@ class Bifunctor p where
 ```
 
 Examples of bifunctors are `Either` and `(,)` (2-ary tuples).
+
+## Profunctors
+
+Profunctors, as known from [Haskell](https://hackage.haskell.org/package/profunctors-5.6.2/docs/Data-Profunctor.html), are functors over types with two arguments where the first argument is _contravariant_ and the second argument is _covariant_ (compare this to bifunctors where both arguments are covariant):
+
+```curry
+class Profunctor p where
+  -- | Maps over both arguments at the same time.
+  dimap :: (a -> b) -> (c -> d) -> p b c -> p a d
+```
+
+An example of a profunctor is `(->)` (functions).
 
 ## Comonads
 
@@ -49,3 +61,4 @@ The modules are adapted from BSD-licensed code from Haskell's base libraries and
 | `Data.Functor.Contravariant` | (C) 2007-2015 Edward Kmett |
 | `Data.Functor.Sum` | (c) Ross Paterson 2014 |
 | `Data.Functor.Product` | 	(c) Ross Paterson 2010 |
+| `Data.Profunctor` | (C) 2011-2018 Edward Kmett |
