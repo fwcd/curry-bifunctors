@@ -55,7 +55,7 @@ The modules are adapted from BSD-licensed code from Haskell's [`base` libraries]
 | ------ | --------- |
 | `Control.Comonad` | (C) 2008-2015 Edward Kmett, (C) 2004 Dave Menendez |
 | `Data.Bifunctor` | (C) 2008-2014 Edward Kmett |
-| `Data.Biapplicative` | (C) 2011-2015 Edward Kmett |
+| `Data.Biapplicative` | (C) 2011-2015 Edward Kmett |
 | `Data.Functor.Compose` | (c) Ross Paterson 2010 |
 | `Data.Functor.Const` | Conor McBride and Ross Paterson 2005 |
 | `Data.Functor.Contravariant` | (C) 2007-2015 Edward Kmett |
