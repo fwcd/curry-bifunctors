@@ -25,6 +25,16 @@ class Bifunctor p where
 
 Examples of bifunctors are `Either` and `(,)` (2-ary tuples).
 
+## Comonads
+
+Comonads, as known from [Haskell](https://hackage.haskell.org/package/comonad-5.0.8/docs/Control-Comonad.html), are the dual of monads, i.e. monads construct and comonads deconstruct:
+
+```curry
+class Functor w => Comonad w where
+  extract :: w a -> a
+  duplicate :: w a -> w (w a)
+```
+
 ## Credits
 
 The modules are adapted from BSD-licensed code from Haskell's base libraries and related packages under the following copyrights:
