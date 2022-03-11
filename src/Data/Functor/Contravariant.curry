@@ -1,9 +1,9 @@
 module Data.Functor.Contravariant
-  ( Contravariant (..)
-  , ($<), (>$<), (>$$<)
+  ( Contravariant (..), ($<), (>$<), (>$$<)
   , Predicate (..)
   , Comparison (..), defaultComparison
   , Equivalence (..), defaultEquivalence
+  , Op (..)
   ) where
 
 infixl 4 >$, $<, >$<, >$$<
@@ -49,3 +49,9 @@ instance Contravariant Equivalence where
 
 defaultEquivalence :: Eq a => Equivalence a
 defaultEquivalence = Equivalence (==)
+
+-- | Dual function arrows.
+newtype Op a b = Op { getOp :: b -> a }
+
+instance Contravariant (Op a) where
+  contramap f (Op g) = Op (g . f)
