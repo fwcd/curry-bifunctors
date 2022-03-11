@@ -22,3 +22,4 @@ The libraries are adapted from BSD-licensed code from Haskell's base libraries u
 | `Data.Functor.Compose` | (c) Ross Paterson 2010 |
 | `Data.Functor.Const` | Conor McBride and Ross Paterson 2005 |
 | `Data.Functor.Contravariant` | (C) 2007-2015 Edward Kmett |
+| `Data.Functor.Sum` | (c) Ross Paterson 2014 |
