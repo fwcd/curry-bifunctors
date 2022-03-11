@@ -1,0 +1,11 @@
+{
+  "name": "curry-bifunctors",
+  "version": "0.0.1",
+  "author": "fwcd",
+  "synopsis": "Functors over types with two arguments",
+  "category": [ "Programming" ],
+  "license": "BSD-3-Clause",
+  "licenseFile": "LICENSE",
+  "dependencies": {
+  }
+}
