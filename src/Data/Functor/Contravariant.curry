@@ -58,3 +58,7 @@ newtype Op a b = Op { getOp :: b -> a }
 
 instance Contravariant (Op a) where
   contramap f (Op g) = Op (g . f)
+
+instance Monoid a => Monoid (Op a b) where
+  mempty = Op (\_ -> mempty)
+  Op f `mappend` Op g = Op (\x -> f x `mappend` g x)
