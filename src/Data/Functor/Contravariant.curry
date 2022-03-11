@@ -2,6 +2,8 @@ module Data.Functor.Contravariant
   ( Contravariant (..)
   , ($<), (>$<), (>$$<)
   , Predicate (..)
+  , Comparison (..)
+  , defaultComparison
   ) where
 
 infixl 4 >$, $<, >$<, >$$<
@@ -28,3 +30,11 @@ newtype Predicate a = Predicate { getPredicate :: a -> Bool }
 
 instance Contravariant Predicate where
   contramap f (Predicate g) = Predicate (g . f)
+
+newtype Comparison a = Comparison { getComparison :: a -> a -> Ordering }
+
+instance Contravariant Comparison where
+  contramap f (Comparison g) = Comparison (\x y -> g (f x) (f y))
+
+defaultComparison :: Ord a => Comparison a
+defaultComparison = Comparison compare
