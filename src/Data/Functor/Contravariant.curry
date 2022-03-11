@@ -2,7 +2,7 @@ module Data.Functor.Contravariant
   ( Contravariant (..), ($<), (>$<), (>$$<)
   , Predicate (..)
   , Comparison (..), defaultComparison
-  , Equivalence (..), defaultEquivalence
+  , Equivalence (..), defaultEquivalence, comparisonEquivalence
   , Op (..)
   ) where
 
@@ -49,6 +49,9 @@ instance Contravariant Equivalence where
 
 defaultEquivalence :: Eq a => Equivalence a
 defaultEquivalence = Equivalence (==)
+
+comparisonEquivalence :: Comparison a -> Equivalence a
+comparisonEquivalence (Comparison cmp) = Equivalence (\x y -> cmp x y == EQ)
 
 -- | Dual function arrows.
 newtype Op a b = Op { getOp :: b -> a }
