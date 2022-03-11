@@ -49,7 +49,7 @@ class Functor w => Comonad w where
 
 ## Credits
 
-The modules are adapted from BSD-licensed code from Haskell's base libraries and related packages under the following copyrights:
+The modules are adapted from BSD-licensed code from Haskell's [`base` libraries](https://hackage.haskell.org/package/base) and related packages ([`bifunctors`](https://hackage.haskell.org/package/bifunctors), [`profunctors`](https://hackage.haskell.org/package/profunctors), [`comonad`](https://hackage.haskell.org/package/comonad)) under the following copyrights:
 
 | Module | Copyright |
 | ------ | --------- |
